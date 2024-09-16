@@ -1,0 +1,50 @@
+# Default properties (applied if no profile is active)
+server:
+  port: 8080
+
+
+spring:
+  profiles:
+    active: prod  # Active profile declaration (default to 'dev')
+
+
+
+# Development profile
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:mysql://root:QXYrtwNlsXNsvdxbUgnIRzgBDAVpxPyK@junction.proxy.rlwy.net:11375/railway?useSSL=false
+    username: root
+    password: QXYrtwNlsXNsvdxbUgnIRzgBDAVpxPyK
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8081
+
+# Production profile
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:mysql://root:QXYrtwNlsXNsvdxbUgnIRzgBDAVpxPyK@junction.proxy.rlwy.net:11375/railway?useSSL=false
+    username: root
+    password: QXYrtwNlsXNsvdxbUgnIRzgBDAVpxPyK
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8082
