@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.table.data.model.employee;
 import com.table.data.service.employeeService;
 
+
 @CrossOrigin
 @RestController
 @RequestMapping("/api/employee/All")
